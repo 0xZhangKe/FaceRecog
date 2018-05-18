@@ -12,6 +12,7 @@ import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.design.widget.BottomSheetDialog;
 import android.support.v4.content.FileProvider;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
@@ -19,6 +20,7 @@ import android.widget.TextView;
 
 import com.arcsoft.facetracking.AFT_FSDKEngine;
 import com.arcsoft.facetracking.AFT_FSDKFace;
+import com.zhangke.facerecog.R;
 import com.zhangke.facerecog.common.Config;
 import com.zhangke.facerecog.page.base.BaseActivity;
 import com.zhangke.facerecog.util.BitmapUtil;
@@ -26,7 +28,6 @@ import com.zhangke.facerecog.util.FaceRecogUtil;
 import com.zhangke.facerecog.util.FileUtil;
 import com.zhangke.facerecog.widget.RectView;
 import com.zhangke.zlog.ZLog;
-import com.zld.facerecog.R;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -47,6 +48,8 @@ public class MainActivity extends BaseActivity {
 
     private int CAMERA_SELECT = 10012;
 
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
     @BindView(R.id.img_face)
     ImageView imgFace;
     @BindView(R.id.rect_view)
@@ -70,6 +73,8 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void initView(@Nullable Bundle savedInstanceState) {
         ButterKnife.bind(this);
+
+        initToolbar(toolbar, "人脸识别", false);
 
         selectImagePath = getExternalFilesDir(null).getPath() + "/tmp.jpg";
 
