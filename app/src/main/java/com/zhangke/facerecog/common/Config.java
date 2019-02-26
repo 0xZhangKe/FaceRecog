@@ -5,9 +5,9 @@ package com.zhangke.facerecog.common;
  */
 public interface Config {
 
-    String appid = "45HVLTYb6kr9tPgYJoPcWRVqcXdaBmrj5kA9ma2n5gFT";
-    String ft_key = "BGGrzC7chuWshdSZYpHes9bwaVdCLW4jjgYNXFVJeRu";
-    String fd_key = "BGGrzC7chuWshdSZYpHes9j6ykr3ryo8Xw7uFqzvThy";
-    String fr_key = "BGGrzC7chuWshdSZYpHesADkaoT1TjJaAbNCuKGKtne";
+    String appid = "";
+    String ft_key = "";
+    String fd_key = "";
+    String fr_key = "";
 
 }
